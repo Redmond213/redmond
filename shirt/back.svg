@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 560" width="3600" height="3360">
+  <circle cx="300" cy="200" r="170" fill="none" stroke="#8bc34a" stroke-width="10"/>
+  <g transform="translate(300,200) scale(4.2) translate(-32,-32)"><path d="M32 4 C18 14 12 26 16 38 C19 46 26 50 32 50 C38 50 45 46 48 38 C52 26 46 14 32 4 Z" fill="#8bc34a"/><path d="M32 14 V60 M32 40 L24 32 M32 34 L40 26" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" fill="none"/></g>
+  <text x="300" y="455" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="78" letter-spacing="8" textLength="520" lengthAdjust="spacingAndGlyphs" fill="#ffffff">GREENSCAPE</text>
+  <text x="300" y="510" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="28" letter-spacing="6" textLength="520" lengthAdjust="spacingAndGlyphs" fill="#8bc34a">LANDSCAPING &amp; TREE SERVICES</text>
+</svg>
