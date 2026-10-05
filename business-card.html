@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* Edit these to restyle the card */
+  :root {
+    --accent: #1f4e79;
+    --ink: #1a1a1a;
+    --muted: #5f6368;
+    --paper: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    background: #eceff1;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 32px 16px;
+  }
+
+  /* Standard US business card: 3.5in x 2in */
+  .card {
+    width: 3.5in;
+    height: 2in;
+    background: var(--paper);
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.15);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Front */
+  .front { padding: 0.25in 0.25in 0.25in 0.35in; display: flex; flex-direction: column; justify-content: space-between; }
+  .front::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 0.12in; background: var(--accent); }
+  .name { font-size: 15pt; font-weight: 700; letter-spacing: .2px; }
+  .title { font-size: 8pt; color: var(--accent); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+  .contact { font-size: 7.5pt; line-height: 1.55; color: var(--muted); list-style: none; }
+  .contact b { color: var(--ink); font-weight: 500; display: inline-block; width: 0.45in; }
+
+  /* Back */
+  .back { background: var(--accent); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 6px; }
+  .company { font-size: 16pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+  .tagline { font-size: 7.5pt; opacity: .85; letter-spacing: .5px; }
+
+  .hint { font-size: 13px; color: #555; max-width: 3.5in; text-align: center; }
+
+  @media print {
+    @page { size: 3.5in 2in; margin: 0; }
+    body { background: none; padding: 0; gap: 0; display: block; }
+    .card { box-shadow: none; border-radius: 0; page-break-after: always; break-after: page; }
+    .hint { display: none; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- FRONT: replace the placeholder text below -->
+  <div class="card front">
+    <div>
+      <div class="name">Your Name</div>
+      <div class="title">Your Job Title</div>
+    </div>
+    <ul class="contact">
+      <li><b>Phone</b>(555) 123-4567</li>
+      <li><b>Email</b>you@example.com</li>
+      <li><b>Web</b>www.example.com</li>
+      <li><b>Office</b>123 Main St, City, ST 00000</li>
+    </ul>
+  </div>
+
+  <!-- BACK -->
+  <div class="card back">
+    <div class="company">Company</div>
+    <div class="tagline">Your tagline goes here</div>
+  </div>
+
+  <p class="hint">Open in a browser and print (Ctrl/Cmd+P) — each side prints on its own 3.5″ × 2″ page. Use "Save as PDF" to send to a print shop.</p>
+</body>
+</html>
