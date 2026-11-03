@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Greenscape Business Cards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #1f3d2b;
+    --green: #2e6b3a;
+    --lime: #8bc34a;
+    --sand: #f3ead9;
+    --sage: #5f8466;
+    --terracotta: #c8643b;
+    --ink: #1a1a1a;
+    --muted: #5f6368;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Inter", system-ui, sans-serif;
+    background: #eceff1;
+    color: var(--ink);
+    padding: 32px 16px;
+  }
+  h2 { font-size: 15px; font-weight: 600; color: #333; margin: 0 0 12px; }
+  .design { max-width: 760px; margin: 0 auto 36px; }
+  .pair { display: flex; flex-wrap: wrap; gap: 20px; }
+
+  /* Standard US business card: 3.5in x 2in */
+  .card {
+    width: 3.5in;
+    height: 2in;
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.15);
+    overflow: hidden;
+    position: relative;
+    flex: none;
+  }
+  .leaf { --leaf: var(--lime); --vein: #fff; }
+  ul { list-style: none; }
+
+  /* ---------- A: Classic ---------- */
+  .a-front { background: #fff; padding: 0.22in 0.25in 0.22in 0.35in; display: flex; flex-direction: column; justify-content: space-between; }
+  .a-front::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 0.12in; background: var(--green); }
+  .a-brand { display: flex; align-items: center; gap: 5px; font-size: 7pt; font-weight: 800; letter-spacing: 1.5px; color: var(--green); text-transform: uppercase; }
+  .a-brand svg { width: 0.2in; height: 0.2in; --vein: var(--green); }
+  .a-name { font-size: 15pt; font-weight: 800; margin-top: 6px; }
+  .a-title { font-size: 7.5pt; color: var(--green); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 1px; }
+  .a-contact { font-size: 7.5pt; line-height: 1.55; color: var(--muted); }
+  .a-contact b { color: var(--ink); font-weight: 600; display: inline-block; width: 0.45in; }
+  .a-back { background: var(--green); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 5px; }
+  .a-back svg { width: 0.5in; height: 0.5in; }
+  .a-company { font-size: 16pt; font-weight: 800; letter-spacing: 3px; }
+  .a-services { font-size: 7.5pt; letter-spacing: .5px; color: #e4f2d4; }
+  .a-city { font-size: 6.5pt; letter-spacing: 2px; text-transform: uppercase; color: var(--lime); font-weight: 600; margin-top: 2px; }
+
+  /* ---------- B: Bold ---------- */
+  .b-front { background: var(--forest); color: #fff; padding: 0.22in 0.25in; display: flex; flex-direction: column; justify-content: space-between; }
+  .b-front .watermark { position: absolute; right: -0.25in; bottom: -0.3in; width: 1.7in; height: 1.7in; --leaf: #2b5138; --vein: var(--forest); }
+  .b-brand { font-size: 7pt; font-weight: 800; letter-spacing: 3px; color: var(--lime); }
+  .b-name { font-size: 17pt; font-weight: 800; line-height: 1.1; margin-top: 4px; }
+  .b-title { font-size: 7.5pt; color: #cfe3c0; margin-top: 2px; }
+  .b-contact { font-size: 7pt; line-height: 1.6; color: #e8efe9; position: relative; }
+  .b-back { background: var(--sand); color: var(--forest); padding: 0.22in 0.28in; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+  .b-head { display: flex; align-items: center; gap: 6px; font-size: 13pt; font-weight: 800; letter-spacing: 2.5px; }
+  .b-head svg { width: 0.28in; height: 0.28in; --vein: var(--forest); }
+  .b-list { font-size: 8.5pt; font-weight: 600; line-height: 1.75; }
+  .b-list li::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--lime); margin-right: 8px; vertical-align: middle; }
+  .b-area { font-size: 6.5pt; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); font-weight: 600; }
+
+  /* ---------- C: LA Sunset ---------- */
+  .c-front { background: var(--sand); color: var(--forest); padding: 0.22in 0.25in; display: flex; flex-direction: column; justify-content: space-between; }
+  .c-word { font-family: "Fraunces", Georgia, serif; font-size: 18pt; font-weight: 700; letter-spacing: .5px; line-height: 1; }
+  .c-rule { width: 0.5in; height: 2px; background: var(--terracotta); margin: 6px 0 5px; }
+  .c-tag { font-size: 6.5pt; letter-spacing: 2px; text-transform: uppercase; color: var(--terracotta); font-weight: 600; }
+  .c-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+  .c-name { font-size: 9.5pt; font-weight: 700; }
+  .c-title { font-size: 7pt; color: var(--sage); margin-bottom: 4px; }
+  .c-contact { font-size: 7pt; line-height: 1.55; color: #3d4a40; }
+  .c-back { background: var(--sage); }
+  .c-back svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .c-back .label { position: absolute; left: 0; right: 0; top: 0.24in; text-align: center; color: #fff; }
+  .c-back .label div:first-child { font-family: "Fraunces", Georgia, serif; font-size: 15pt; font-weight: 700; letter-spacing: 1px; }
+  .c-back .label div:last-child { font-size: 6.5pt; letter-spacing: 2.5px; text-transform: uppercase; margin-top: 3px; color: #fbe3d4; }
+
+  .hint { max-width: 760px; margin: 0 auto; font-size: 13px; color: #555; line-height: 1.5; }
+
+  @media print {
+    @page { size: 3.5in 2in; margin: 0; }
+    body { background: none; padding: 0; }
+    h2, .hint { display: none; }
+    .design { margin: 0; max-width: none; }
+    .pair { display: block; }
+    .card { box-shadow: none; border-radius: 0; break-after: page; page-break-after: always; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Shared leaf logo -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="leaf" viewBox="0 0 64 64">
+    <path d="M32 4 C18 14 12 26 16 38 C19 46 26 50 32 50 C38 50 45 46 48 38 C52 26 46 14 32 4 Z" fill="var(--leaf)"/>
+    <path d="M32 14 V60 M32 40 L24 32 M32 34 L40 26" stroke="var(--vein)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  </symbol>
+</svg>
+
+<!-- Fill in your details: search for "Your Name", the phone, email and website lines in each design. -->
+
+<section class="design">
+  <h2>Design A — Classic</h2>
+  <div class="pair">
+    <div class="card a-front">
+      <div>
+        <div class="a-brand"><svg class="leaf"><use href="#leaf"/></svg>Greenscape</div>
+        <div class="a-name">Your Name</div>
+        <div class="a-title">Owner · Landscape Designer</div>
+      </div>
+      <ul class="a-contact">
+        <li><b>Phone</b>(213) 555-0123</li>
+        <li><b>Email</b>you@example.com</li>
+        <li><b>Web</b>www.yourwebsite.com</li>
+        <li><b>Area</b>Los Angeles &amp; surrounding areas</li>
+      </ul>
+    </div>
+    <div class="card a-back">
+      <svg class="leaf"><use href="#leaf"/></svg>
+      <div class="a-company">GREENSCAPE</div>
+      <div class="a-services">Tree Trimming · Landscape Design</div>
+      <div class="a-city">Los Angeles, CA</div>
+    </div>
+  </div>
+</section>
+
+<section class="design">
+  <h2>Design B — Bold</h2>
+  <div class="pair">
+    <div class="card b-front">
+      <svg class="watermark"><use href="#leaf"/></svg>
+      <div style="position:relative">
+        <div class="b-brand">GREENSCAPE</div>
+        <div class="b-name">Your Name</div>
+        <div class="b-title">Owner · Landscape Designer</div>
+      </div>
+      <ul class="b-contact">
+        <li>(213) 555-0123</li>
+        <li>you@example.com</li>
+        <li>www.yourwebsite.com</li>
+      </ul>
+    </div>
+    <div class="card b-back">
+      <div class="b-head"><svg class="leaf"><use href="#leaf"/></svg>GREENSCAPE</div>
+      <ul class="b-list">
+        <li>Tree Trimming</li>
+        <li>Hedge &amp; Shrub Trimming</li>
+        <li>Landscape Design</li>
+      </ul>
+      <div class="b-area">Serving Greater Los Angeles</div>
+    </div>
+  </div>
+</section>
+
+<section class="design">
+  <h2>Design C — LA Sunset</h2>
+  <div class="pair">
+    <div class="card c-front">
+      <div>
+        <div class="c-word">Greenscape</div>
+        <div class="c-rule"></div>
+        <div class="c-tag">Trimming · Landscape Design</div>
+      </div>
+      <div class="c-bottom">
+        <div>
+          <div class="c-name">Your Name</div>
+          <div class="c-title">Owner · Landscape Designer</div>
+          <ul class="c-contact">
+            <li>(213) 555-0123</li>
+            <li>you@example.com</li>
+            <li>www.yourwebsite.com</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card c-back">
+      <svg viewBox="0 0 336 192" preserveAspectRatio="none" aria-hidden="true">
+        <circle cx="168" cy="150" r="46" fill="#e9a36f"/>
+        <path d="M0 150 C60 120 110 135 168 128 C230 120 280 132 336 118 V192 H0Z" fill="#4c6e53"/>
+        <path d="M0 170 C70 150 140 166 200 156 C260 146 300 160 336 150 V192 H0Z" fill="var(--forest)"/>
+        <!-- palm trees -->
+        <g stroke="var(--forest)" stroke-linecap="round" fill="none">
+          <path d="M62 168 C60 140 58 112 64 86" stroke-width="3"/>
+          <path d="M64 86 C54 80 44 82 36 90 M64 86 C56 74 46 70 38 72 M64 86 C70 74 80 70 90 74 M64 86 C74 82 84 86 90 94 M64 86 C64 76 66 68 72 62" stroke-width="2.5"/>
+          <path d="M278 162 C280 142 282 124 278 106" stroke-width="2.5"/>
+          <path d="M278 106 C270 101 262 103 256 109 M278 106 C272 97 264 94 258 96 M278 106 C283 97 291 94 298 97 M278 106 C286 103 293 106 298 112" stroke-width="2"/>
+        </g>
+      </svg>
+      <div class="label">
+        <div>Greenscape</div>
+        <div>Los Angeles, CA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="hint">To print, open this page in a browser and press Ctrl/Cmd+P. Each card side prints on its own 3.5″ × 2″ page: pages 1–2 are Design A, 3–4 Design B and 5–6 Design C, so choose the pages for the design you want. Use "Save as PDF" to send it to a print shop.</p>
+
+</body>
+</html>
